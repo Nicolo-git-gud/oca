@@ -76,7 +76,7 @@ void conditions(Giocatore &g, Giocatore &g2)
         if (g.totale == 54)
         {
             g.totale -= g.mossa;
-            std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
+            std::cout << "Sei su una casella oca, ti sposti indietro del valore della mossa che ti ha condotto qui " << std::endl;
             std::cout << "Finisci sulla casella " << g.totale << std::endl;
         }
     }
