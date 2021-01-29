@@ -35,7 +35,6 @@ int main()
         }
     }
 }
-
 void conditions(Giocatore &g, Giocatore &g2)
 {
     if (g.totale == 31 && g2.totale == 52)
@@ -72,7 +71,7 @@ void conditions(Giocatore &g, Giocatore &g2)
     if (g.totale > 63)
     { //Torno indietro di quanto sforo il 63
         g.totale = (63 - (g.totale - 63));
-        std::cout << "Torni alla casella " << g.totale << std::endl;
+        std::cout << " Sei sopra al 63 , torni alla casella " << g.totale << std::endl;
         if (g.totale == 54)
         {
             g.totale -= g.mossa;
