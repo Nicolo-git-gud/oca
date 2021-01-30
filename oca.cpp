@@ -136,6 +136,17 @@ void conditions(Giocatore &g, Giocatore &g2)
         std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
         std::cout << "Finisci sulla casella " << g.totale << std::endl;
     }
+    if (g.totale > 63)
+    { //Torno indietro di quanto sforo il 63
+        g.totale = (63 - (g.totale - 63));
+        std::cout << " Sei sopra al 63 , torni alla casella " << g.totale << std::endl;
+        if (g.totale == 54)
+        {
+            g.totale -= g.mossa;
+            std::cout << "Sei su una casella oca, ti sposti indietro del valore della mossa che ti ha condotto qui " << std::endl;
+            std::cout << "Finisci sulla casella " << g.totale << std::endl;
+        }
+    }
     if (g.totale == 19)
     { //Fermo l'utente per 3 turni, per come sono fatte le chiamate mi basta fermare due turni quando entra
         g.fermo = 2;
