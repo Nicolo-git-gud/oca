@@ -65,8 +65,15 @@ void conditions(Giocatore &g, Giocatore &g2)
     }
     if (g.totale == 63)
         return;
+        
     std::cout << g.name << " Fai la tua mossa" << std::endl;
-    std::cin >> g.mossa;
+    //std::cin >> g.mossa;
+    
+    while(!(std::cin >> g.mossa )){
+    std::cout << g.name << " Fai la tua mossa" << std::endl;
+    std::cin.clear();
+    std::cin.ignore(123, '\n');
+    }
     g.totale += g.mossa;
     if (g.totale > 63)
     { //Torno indietro di quanto sforo il 63
@@ -93,7 +100,7 @@ void conditions(Giocatore &g, Giocatore &g2)
     { //Torno indietro di quanto sforo il 63
         g.totale = (63 - (g.totale - 63));
         std::cout << " Sei sopra al 63 , torni alla casella " << g.totale << std::endl;
-        if (g.totale == 54)
+    while (g.totale == 5 || g.totale == 6 || g.totale == 9 || g.totale == 18 || g.totale == 27 || g.totale == 36 || g.totale == 45 || g.totale == 54) //Caselle oca
         {
             g.totale -= g.mossa;
             std::cout << "Sei su una casella oca, ti sposti indietro del valore della mossa che ti ha condotto qui " << std::endl;
