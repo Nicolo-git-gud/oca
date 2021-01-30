@@ -82,60 +82,13 @@ void conditions(Giocatore &g, Giocatore &g2)
     else
         std::cout << "Ti trovi nella casella " << g.totale << std::endl;
 
-    if (g.totale == 5) //Iniziano le caselle oca
+    while (g.totale == 5 || g.totale == 6 || g.totale == 9 || g.totale == 18 || g.totale == 27 || g.totale == 36 || g.totale == 45 || g.totale == 54) //Caselle oca
     {
         g.totale += g.mossa;
         std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
         std::cout << "Finisci sulla casella " << g.totale << std::endl;
     }
-    if (g.totale == 6)
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 9)
-    {
-        if (g.mossa == 9)
-        { //Se uno come primo tiro fa 9 ha vinto
-            g.totale = 63;
-            return;
-        }
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 18)
-
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 27)
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 36)
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 45)
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
-    if (g.totale == 54)
-    {
-        g.totale += g.mossa;
-        std::cout << "Sei su una casella oca, ti sposti del valore della mossa che ti ha condotto qui " << std::endl;
-        std::cout << "Finisci sulla casella " << g.totale << std::endl;
-    }
+        
     if (g.totale > 63)
     { //Torno indietro di quanto sforo il 63
         g.totale = (63 - (g.totale - 63));
